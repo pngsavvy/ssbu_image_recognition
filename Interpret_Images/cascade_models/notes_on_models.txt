@@ -1,0 +1,5 @@
+255_48 - is too strict and only recognizes mario's body, not his jab
+255arm - seems to track mario's body
+500    - tracks mario's body
+arm48  - pretty good at tracking characters. tracks sepheroth as well
+fist_34- good at recognizing jabs that hit but too strict

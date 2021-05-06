@@ -1,0 +1,16 @@
+need to change label colors so i can read better
+
+jab only works when facing to the right.
+
+
+neutral_b is working better now
+-Add some sheild screenshots to the negative examples
+-this needs better training. its not strict enough. recognizes too many things maybe just needs more negatives
+
+
+sheild works well
+
+
+TRACKER
+i will stick with my current tracker. I just need to find a way to reset it if it looses track of mario. 
+Maybe use the tracker in combination with image recognition.
