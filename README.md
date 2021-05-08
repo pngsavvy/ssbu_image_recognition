@@ -49,11 +49,14 @@ c:\Projects\opencv\build\x64\vc15\bin\opencv_annotation.exe --annotations=right_
 Watch my video for more details on how this works.
 
 You will then need to run:
+```bash
 c:\Projects\opencv\build\x64\vc15\bin\opencv_createsamples.exe -info right_smash.txt -w 24 -h 24 -num 10000 -vec right_smash.vec
+```
 
 and then:
+```bash
 c:\Projects\opencv\build\x64\vc15\bin\opencv_traincascade.exe -data cascades/right_smash/ -vec right_smash.vec -bg right_smash_neg.txt -w 24 -h 24 -numPos 100 -numNeg 200 -numStages 10 -precalcValBufSize 6000 -recalcIdxBufSize 6000 -maxFalseAlarmRate .001 -minHitRate .999
-
+```
 I explain all of these commands in my video.
 
 ### Image Recognition
