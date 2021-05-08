@@ -39,6 +39,7 @@ Run the .exe file to extract the contents. It will extract an opencv folder. The
 opencv\build\x64\vc15\bin\opencv_createsamples.exe
 
 opencv\build\x64\vc15\bin\opencv_annotation.exe
+
 opencv\build\x64\vc15\bin\opencv_traincascade.exe
 
 The first step to training the models is to runthe opencv_annotations.exe file. Here is the command that I used for this:
