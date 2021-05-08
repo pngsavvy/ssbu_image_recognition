@@ -1,5 +1,8 @@
 # Super Smash Bros. Ultimate Image Recognition
 
+For an in depth overview of this project watch my video:
+https://youtu.be/zjRzunCeB0s
+
 ssbu_image_recognition is used to detect what fighters are doing in smash. There is a lot of work to be done still but when fully developed this will be a great tool for learning habits of different players and improving in the game.
 
 It is currently using Opencv tools for image recognition and training models. I'm not sure that I made the right choice in going with opencv. I think the next step in this project is to do some experimentation with Tensorflow and see if that gives me better results. 
@@ -23,7 +26,7 @@ git clone https://github.com/pngsavvy/ssbu_image_recognition.git
 
 ### Data Collection
 
-Open
+Enter the collect training images folder and run the program. You can use tools in this folder to collect good data for training. For more detail watch my video https://youtu.be/zjRzunCeB0s.
 
 ### Training Models
 
@@ -53,4 +56,6 @@ I explain all of these commands in my video.
 
 ### Image Recognition
 
-...
+You can either use screen capture or a video file to do image recognition on. This is up to you. When you run the program first select the character that you would like to track and then click the space bar or enter. If the tracker looses track of the character, the next time that Mario jabs it will reset the tracker to where the jab is recognized at.
+
+#### If you have any questions let me know. Leave a comment on my video.
