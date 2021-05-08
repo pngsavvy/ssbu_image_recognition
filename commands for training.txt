@@ -21,6 +21,8 @@ c:\Projects\opencv\build\x64\vc15\bin\opencv_createsamples.exe -info fireball.tx
 # train model
 c:\Projects\opencv\build\x64\vc15\bin\opencv_traincascade.exe -data cascades/fireball/ -vec fireball.vec -bg fireball_neg.txt -w 24 -h 24 -numPos 150 -numNeg 150 -numStages 10 -precalcValBufSize 6000 -recalcIdxBufSize 6000 -maxFalseAlarmRate .001 -minHitRate .999
 
+>>> last used:
+c:\Projects\opencv\build\x64\vc15\bin\opencv_traincascade.exe -data cascades/fireball/ -vec fireball.vec -bg fireball_neg.txt -w 24 -h 24 -numPos 150 -numNeg 150 -numStages 22 -precalcValBufSize 6000 -recalcIdxBufSize 6000 -maxFalseAlarmRate .001 -minHitRate .999
 ---------------
 SHIELD
 
@@ -30,6 +32,9 @@ c:\Projects\opencv\build\x64\vc15\bin\opencv_annotation.exe --annotations=sheild
 c:\Projects\opencv\build\x64\vc15\bin\opencv_createsamples.exe -info sheild.txt -w 24 -h 24 -num 10000 -vec sheild.vec
 
 # train model
+c:\Projects\opencv\build\x64\vc15\bin\opencv_traincascade.exe -data cascades/sheild/ -vec sheild.vec -bg sheild_neg.txt -w 24 -h 24 -numPos 290 -numNeg 290 -numStages 10 -precalcValBufSize 6000 -recalcIdxBufSize 6000 -maxFalseAlarmRate .001 -minHitRate .999
+
+>>> last parameters used:
 c:\Projects\opencv\build\x64\vc15\bin\opencv_traincascade.exe -data cascades/sheild/ -vec sheild.vec -bg sheild_neg.txt -w 24 -h 24 -numPos 290 -numNeg 290 -numStages 10 -precalcValBufSize 6000 -recalcIdxBufSize 6000 -maxFalseAlarmRate .001 -minHitRate .999
 
 ---------------

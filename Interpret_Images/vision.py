@@ -35,7 +35,7 @@ class Vision:
 
     # given a list of [x, y, w, h] rectangles and a canvas image to draw on, return an image with
     # all of those rectangles drawn 
-    def draw_rectangles(self, img, rectangles_dictionary, weights):
+    def draw_rectangles(self, img, rectangles_dictionary):
         labels = MoveLabels()
 
         # these colors (Blue, Green, Red) 
@@ -51,8 +51,6 @@ class Vision:
         weight = 0
 
         # loop through each item in dictoinary and display each one in a different color based on the label
-        # if float(weight) > 2: 
-            # print('FOUND !!!!!!!!!!!!!')
         for label, rectangles in rectangles_dictionary.items():
             for (x, y, w, h) in rectangles:
 
@@ -70,10 +68,47 @@ class Vision:
                 # draw the box
                 cv.rectangle(img, top_left, bottom_right, color, lineType=line_type)
                 cv.putText(img, label, (x, y-10), cv.FONT_HERSHEY_SIMPLEX, 0.9, color, 2)
-        # else:
-        #     print("no rects")
-       
+
         return img
+
+    def draw_rectangles_weight(self, img, rectangles_dictionary, weight):
+        labels = MoveLabels()
+
+        # these colors (Blue, Green, Red) 
+        line_type = cv.LINE_AA
+        red=(0,0,255)
+        green=(0,255,0)
+        blue=(255,0,0)
+        color=(255,255,255)
+
+        r = 0
+        g = 255
+        b = 0
+        
+        if weight > 2:
+            # loop through each item in dictoinary and display each one in a different color based on the label
+            for label, rectangles in rectangles_dictionary.items():
+                for (x, y, w, h) in rectangles:
+
+                    # determine the box positions
+                    top_left = (x, y)
+                    bottom_right = (x + w, y + h)
+
+                    if label == labels.shield:
+                        color = blue
+                    if label == labels.neutral_b:
+                        color = red
+                    if label == labels.jab:
+                        color = green
+
+                    # draw the box
+                    cv.rectangle(img, top_left, bottom_right, color, lineType=line_type)
+                    cv.putText(img, label, (x, y-10), cv.FONT_HERSHEY_SIMPLEX, 0.9, color, 2)
+
+        return img
+        # else:
+
+        #     print("cant find image")
 
     # given a list of [x, y] positions and a canvas image to draw on, return an image with all
     # of those center points drawn on as crosshairs
