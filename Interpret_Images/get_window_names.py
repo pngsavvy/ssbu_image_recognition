@@ -2,6 +2,7 @@ import win32gui
 import win32ui
 import win32con
 
+# Returns a list of all open window names.
 def get_window_names():
     names = []
     def winEnumHandler(hwnd, ctx):

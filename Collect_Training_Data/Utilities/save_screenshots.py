@@ -1,14 +1,19 @@
+import cv2 as cv
+from time import time
+from .file_paths import Paths
 
-def save_screenshots(save_to_path, move_from, frame_data):
-    for i in range(count + frame_data.start + lag, count + frame_data.end + lag):
-        try:
-            # move from catch to jab folder
-            shutil.move(str(move_from) + '/{}.jpg'.format(i), str(paths.jab) + '/{}.jpg'.format(loop_time))
-            # I don't know if i need this 
-            cv.imwrite(str(save_to_path) + '/{}.jpg'.format(loop_time), smash_screenshot)
-        except:
-            print("Unable to move file")
-        loop_time = time()
+
+def save_screenshots(img, save_to_path, frame_data, loop_time, only_one_button_clicked):
+    path = Paths()
+    if only_one_button_clicked:
+        for i in range(frame_data.start, frame_data.end):
+            try:
+                cv.imwrite(str(save_to_path) + '/{}.jpg'.format(loop_time), img)
+            except Exception as e: 
+                print(str(e))
+                
+            # set loop time for naming files
+            loop_time = time()
 
 def x_button_clicked(buttons_clicked, count, loop_time, smash_screenshot):
     if ("X" in buttons_clicked):

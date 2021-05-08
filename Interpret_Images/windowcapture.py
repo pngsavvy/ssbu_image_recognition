@@ -4,7 +4,6 @@ import win32gui, win32ui, win32con
 
 class WindowCapture:
 
-    # properties
     w = 0
     h = 0
     hwnd = None
@@ -13,7 +12,6 @@ class WindowCapture:
     offset_x = 0
     offset_y = 0
 
-    # constructor
     def __init__(self, window_name=None):
         # find the handle for the window we want to capture.
         # if no window name is given, capture the entire screen
@@ -54,7 +52,6 @@ class WindowCapture:
         cDC.BitBlt((0, 0), (self.w, self.h), dcObj, (self.cropped_x, self.cropped_y), win32con.SRCCOPY)
 
         # convert the raw data into a format opencv can read
-        #dataBitMap.SaveBitmapFile(cDC, 'debug.bmp')
         signedIntsArray = dataBitMap.GetBitmapBits(True)
         img = np.fromstring(signedIntsArray, dtype='uint8')
         img.shape = (self.h, self.w, 4)

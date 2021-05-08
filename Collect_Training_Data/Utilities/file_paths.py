@@ -1,9 +1,10 @@
 from pathlib import Path
 
+# Used to keep track of file paths.
+
 class Paths:
 
     screenshots = Path('Screenshots')
-    catch = screenshots / 'Catch'
 
     no_mario = screenshots / 'Negative_Mario'
     not_in_game = screenshots / 'Not_In_Game'
@@ -17,7 +18,7 @@ class Paths:
 
     smashes = attacks / 'Smashes'
     tilts = attacks / 'Tilts'
-
+    
     jab = attacks / 'Jab'
 
     right_smash = smashes / 'Right_Smash'

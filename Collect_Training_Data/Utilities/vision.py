@@ -78,19 +78,18 @@ class Vision:
 
     # given a list of [x, y, w, h] rectangles and a canvas image to draw on, return an image with
     # all of those rectangles drawn
-    def draw_rectangles(self, haystack_img, rectangles):
+    def draw_rectangles(self, img, rectangles ):
         # these colors are actually BGR
         line_color = (0, 255, 0)
         line_type = cv.LINE_4
-
         for (x, y, w, h) in rectangles:
             # determine the box positions
             top_left = (x, y)
             bottom_right = (x + w, y + h)
             # draw the box
-            cv.rectangle(haystack_img, top_left, bottom_right, line_color, lineType=line_type)
+            cv.rectangle(img, top_left, bottom_right, line_color, lineType=line_type)
 
-        return haystack_img
+        return img
 
     def draw_rectangles_show_img(self, haystack_img, rectangles):
         # these colors are actually BGR

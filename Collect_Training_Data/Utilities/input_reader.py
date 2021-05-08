@@ -45,26 +45,29 @@ class InputReader:
     R_clicks = None
 
     def set_clicks(self, screenshot):
+        
         # display the processed image
-        # self.A_clicks = self.vision_A.find(screenshot, 0.98, 'rectangles')
-        # self.B_clicks = self.vision_B.find(screenshot, 0.90, 'rectangles')
+        self.A_clicks = self.vision_A.find(screenshot, 0.98, 'rectangles')
+        self.B_clicks = self.vision_B.find(screenshot, 0.90, 'rectangles')
         # self.X_clicks = self.vision_X.find(screenshot, 0.98, 'rectangles')
         # self.Y_clicks = self.vision_Y.find(screenshot, 0.98, 'rectangles')
-        # self.Z_clicks = self.vision_Z.find(screenshot, 0.95, 'rectangles')
-        # self.L_clicks = self.vision_L.find(screenshot, 0.90, 'rectangles')
-        # self.R_clicks = self.vision_R.find(screenshot, 0.90, 'rectangles')
+        self.Z_clicks = self.vision_Z.find(screenshot, 0.95, 'rectangles')
+        self.L_clicks = self.vision_L.find(screenshot, 0.90, 'rectangles')
+        self.R_clicks = self.vision_R.find(screenshot, 0.90, 'rectangles')
+
+        self.vision_B.draw_rectangles_show_img(screenshot, self.B_clicks)
 
         # self.Up_clicks = self.vision_Up.find(screenshot, 0.90, 'rectangles')
         # self.Down_clicks = self.vision_Down.find(screenshot, 0.90, 'rectangles')
         # self.Left_clicks = self.vision_Left.find(screenshot, 0.90, 'rectangles')
         # self.Right_clicks = self.vision_Right.find(screenshot, 0.90, 'rectangles')
         
-        self.C_down_clicks = self.vision_C_Down.find(screenshot, 0.93, 'rectangles')
-        self.C_left_clicks = self.vision_C_Left.find(screenshot, 0.93, 'rectangles')
-        self.C_right_clicks = self.vision_C_Right.find(screenshot, 0.93, 'rectangles')
-        self.C_up_clicks = self.vision_C_Up.find(screenshot, 0.93, 'rectangles')
+        # self.C_down_clicks = self.vision_C_Down.find(screenshot, 0.93, 'rectangles')
+        # self.C_left_clicks = self.vision_C_Left.find(screenshot, 0.93, 'rectangles')
+        # self.C_right_clicks = self.vision_C_Right.find(screenshot, 0.93, 'rectangles')
+        # self.C_up_clicks = self.vision_C_Up.find(screenshot, 0.93, 'rectangles')
 
-        self.vision_C_Right.draw_rectangles_show_img(screenshot, self.C_right_clicks)
+        # self.vision_C_Right.draw_rectangles_show_img(screenshot, self.C_right_clicks)
 
         # self.up_arrow_clicks = self.vision_up_arrow.find(screenshot, 0.98, 'rectangles')
         # self.donw_arrow_clicks = self.vision_down_arrow.find(screenshot, 0.98, 'rectangles')
@@ -75,12 +78,12 @@ class InputReader:
             return len(self.buttons_clicked()) == 1
     
     def buttons_clicked(self):
-        not_clicked = []
-        # if len(self.A_clicks) > 0:
-        #     not_clicked.append("A")
+        clicked_buttons = []
+        if len(self.A_clicks) > 0:
+            clicked_buttons.append("A")
 
-        # if len(self.B_clicks) > 0:
-        #     not_clicked.append("B")
+        if len(self.B_clicks) > 0:
+            clicked_buttons.append("B")
 
         # if len(self.X_clicks) > 0:
         #     not_clicked.append("X")
@@ -88,27 +91,27 @@ class InputReader:
         # if len(self.Y_clicks) > 0:
         #     not_clicked.append("Y")
 
-        # if len(self.Z_clicks) > 0:
-        #     not_clicked.append("Z")
+        if len(self.Z_clicks) > 0:
+            clicked_buttons.append("Z")
 
-        # if len(self.L_clicks) > 0:
-        #     not_clicked.append("L")
+        if len(self.L_clicks) > 0:
+            clicked_buttons.append("L")
 
-        # if len(self.R_clicks) > 0:
-        #     not_clicked.append("R")
+        if len(self.R_clicks) > 0:
+            clicked_buttons.append("R")
 
-        if len(self.C_down_clicks) > 0:
-            not_clicked.append("C_Down")
+        # if len(self.C_down_clicks) > 0:
+        #     not_clicked.append("C_Down")
 
-        if len(self.C_right_clicks) > 0:
-            not_clicked.append("C_Right")
+        # if len(self.C_right_clicks) > 0:
+        #     not_clicked.append("C_Right")
 
-        if len(self.C_left_clicks) > 0:
-            not_clicked.append("C_Left")
+        # if len(self.C_left_clicks) > 0:
+        #     not_clicked.append("C_Left")
 
-        if len(self.C_up_clicks) > 0:
-            not_clicked.append("C_Up")
+        # if len(self.C_up_clicks) > 0:
+        #     not_clicked.append("C_Up")
 
-        return not_clicked
+        return clicked_buttons
     
     

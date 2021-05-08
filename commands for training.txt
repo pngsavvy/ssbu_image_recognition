@@ -1,0 +1,46 @@
+
+# JAB
+------------------------------------------
+
+c:\Projects\opencv\build\x64\vc15\bin\opencv_annotation.exe --annotations=jab.txt --images=Screenshots/Attacks/Jab/
+
+# create pos.vec
+c:\Projects\opencv\build\x64\vc15\bin\opencv_createsamples.exe -info jab.txt -w 24 -h 24 -num 10000 -vec jab.vec
+
+# train model
+c:\Projects\opencv\build\x64\vc15\bin\opencv_traincascade.exe -data cascades/jab/ -vec jab.vec -bg jab_neg.txt -w 24 -h 24 -numPos 125 -numNeg 250 -numStages 10 -precalcValBufSize 6000 -recalcIdxBufSize 6000 -maxFalseAlarmRate .001 -minHitRate .999
+
+---------------
+NEUTRAL B
+
+c:\Projects\opencv\build\x64\vc15\bin\opencv_annotation.exe --annotations=fireball.txt --images=Screenshots/Specials/Neutral_Special/
+
+# create pos.vec
+c:\Projects\opencv\build\x64\vc15\bin\opencv_createsamples.exe -info fireball.txt -w 24 -h 24 -num 10000 -vec fireball.vec
+
+# train model
+c:\Projects\opencv\build\x64\vc15\bin\opencv_traincascade.exe -data cascades/fireball/ -vec fireball.vec -bg fireball_neg.txt -w 24 -h 24 -numPos 150 -numNeg 150 -numStages 10 -precalcValBufSize 6000 -recalcIdxBufSize 6000 -maxFalseAlarmRate .001 -minHitRate .999
+
+---------------
+SHIELD
+
+c:\Projects\opencv\build\x64\vc15\bin\opencv_annotation.exe --annotations=sheild.txt --images=Screenshots/Shield/
+
+# create pos.vec
+c:\Projects\opencv\build\x64\vc15\bin\opencv_createsamples.exe -info sheild.txt -w 24 -h 24 -num 10000 -vec sheild.vec
+
+# train model
+c:\Projects\opencv\build\x64\vc15\bin\opencv_traincascade.exe -data cascades/sheild/ -vec sheild.vec -bg sheild_neg.txt -w 24 -h 24 -numPos 290 -numNeg 290 -numStages 10 -precalcValBufSize 6000 -recalcIdxBufSize 6000 -maxFalseAlarmRate .001 -minHitRate .999
+
+---------------
+RIGHT SMASH
+
+c:\Projects\opencv\build\x64\vc15\bin\opencv_annotation.exe --annotations=right_smash.txt --images=Screenshots/HSV_Mario_Training/Attacks/Smashes/Right_Smash/
+
+# create pos.vec
+c:\Projects\opencv\build\x64\vc15\bin\opencv_createsamples.exe -info right_smash.txt -w 24 -h 24 -num 10000 -vec right_smash.vec
+
+# train model
+c:\Projects\opencv\build\x64\vc15\bin\opencv_traincascade.exe -data cascades/right_smash/ -vec right_smash.vec -bg right_smash_neg.txt -w 24 -h 24 -numPos 100 -numNeg 200 -numStages 10 -precalcValBufSize 6000 -recalcIdxBufSize 6000 -maxFalseAlarmRate .001 -minHitRate .999
+
+

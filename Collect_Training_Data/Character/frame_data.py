@@ -8,6 +8,7 @@ class FrameData:
     mario.jab = Frames(1,3)
     mario.grab = Frames(6,11)
     mario.jump = Frames(1,5)
+    mario.sheild = Frames(1,4)
 
     mario.right_tilt = Frames(5,7)
     mario.left_tilt = Frames(5,7)
@@ -20,11 +21,12 @@ class FrameData:
     mario.up_smash = Frames(9,12)
     mario.down_smash = Frames(5,10)
 
-    mario.neutral_special = Frames(10, 21)
+    mario.neutral_special = Frames(15, 18)
     mario.right_special = Frames(12, 14)
     mario.left_special = Frames(12, 14)
     mario.up_special = Frames(3,18)
     mario.down_special = Frames(21, 30)
+
 
 
 

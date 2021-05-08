@@ -1,5 +1,8 @@
 from time import time
 
+# These are used to keep track of FPS as well as how long it has been since a certain move has been recognized. 
+# This way it does not count the same move too many times. 
+
 class TimeTracker:
     last_loop = None
     last_jab = None
@@ -11,12 +14,3 @@ class TimeTracker:
         self.last_neutral_b = time()
         self.last_jab = time()
         self.last_sheild = time()
-
-    # def last_loop(self):
-    #     return self.last_loop
-    
-    # def last_jab(self):
-    #     return self.last_jab
-
-    # def last_neutral_b(self):
-    #     return self.last_neutral_b
