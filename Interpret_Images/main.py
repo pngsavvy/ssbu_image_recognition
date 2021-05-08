@@ -17,12 +17,12 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)))
 # screen capture or just a few distinct words that are in the title.
 key_word = "Game Capture HD"
 
-windows = get_window_names()
-window_name = [window for window in windows if key_word in window][0]
+# windows = get_window_names()
+# window_name = [window for window in windows if key_word in window][0]
 
 try:
     # initialize the WindowCapture class
-    wincap = WindowCapture(window_name)
+    # wincap = WindowCapture(window_name)
     cap = cv.VideoCapture('mario.mp4')
 
     # load the trained models
